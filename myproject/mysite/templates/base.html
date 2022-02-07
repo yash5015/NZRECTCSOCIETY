@@ -1,0 +1,119 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.12.313/build/pdf.min.js"></script>
+    <title>NZRECSOCIETY</title>
+</head>
+
+
+<body style=" background: rgb(249, 226, 227);">
+
+    <div class=" navbannerbg">
+        <div class="navbanneroverlayy">
+            <div class="branding">
+                <img src="{%static 'assets/logo1.png'%}" alt="">
+                <div class="name">
+                    <h2>The northern zone railway employees co-operative thrift and credit society ltd. regd office
+                        baroda
+                        house
+                        new delhi. </h2>
+                </div>
+                <img src="{%static 'assets/reg2.png'%}" alt="">
+
+            </div>
+
+            <nav>
+                <div class="logo" id="logo">
+                    <a href="#banner"><img src="" alt=""></a>
+                </div>
+                <div class="menuToggle" onclick="toggleMenu();"></div>
+                <ul class="navigation">
+                    <li><a href="/" onclick="toggleMenu();">HOME</a></li>
+                    <li><a href="/#aboutus" onclick="toggleMenu();">ABOUT US</a></li>
+                    <li><a href="{%url 'members'%}" onclick="toggleMenu();">MEMBERS</a></li>
+                    <li><a href=" {%url 'articles'%}" onclick="toggleMenu();">ARTICLES</a></li>
+                    <li><a href=" {%url 'contact'%}" onclick="toggleMenu();">CONTACT US</a></li>
+                </ul>
+        </div>
+        </nav>
+    </div>
+    </div>
+
+    {%block body%}{%endblock%}
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footerdiv">
+                <img src="{%static 'assets/steam_engine2_3.png'%}" alt="">
+                <div class="footercontainer">
+                    <div class="footerrow">
+                        <div class="footerinfo site-map">
+                            <h3>
+                                Site Map
+                            </h3>
+                            <p><a href="">HOME</a></p>
+                            <p><a href="">ABOUT US</a></p>
+                            <p><a href="">MEMBER</a></p>
+                            <p><a href="">ARTICLE</a></p>
+                            <p><a href="">CONTACT US</a></p>
+
+                        </div>
+                        <div class="footerinfo">
+                            <h3>
+                                Important Links
+                            </h3>
+                            <p><a href="https://www.railway-technology.com/projects/northbengalsikkimrai/">-North
+                                    Bengal-Sikkim Railway Link, India</a></p>
+                            <p> <a
+                                    href="http://www.indianrail.gov.in/enquiry/StaticPages/StaticEnquiry.jsp?StaticPage=index.html">-INDIAN
+                                    RAILWAYS PASSENGER RESERVATION ENQUIRY</a></p>
+                            <p> <a href="https://nr.indianrailways.gov.in/#forward">-Northern Railway Tenders</a></p>
+                        </div>
+                        <div class="footerinfo">
+                            <h3>
+                                Contact Info
+                            </h3>
+                            <div class="footercontact-info">
+                                <div class="cinfo">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <p>NZRE CTC SOCIETY LTD. BARODA HOUSE, NEW-DELHI</p>
+                                </div>
+                                <div class="cinfo">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <p>69582858</p>
+                                </div>
+                                <div class="cinfo">
+                                    <i class="fas fa-fax"></i>
+                                    <p>01123385608</p>
+                                </div>
+                                <div class="cinfo">
+                                    <i class="far fa-envelope"></i>
+                                    <p>nzcectcsociety@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <p>All rights reserved 2022</p>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

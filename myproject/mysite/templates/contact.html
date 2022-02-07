@@ -1,0 +1,77 @@
+{%extends 'base.html'%}
+
+{% load static %}
+
+<body>
+
+    {%block body%}
+    <section class="contact" id="contactus">
+        <div class="container">
+            <h1>contact us</h1>
+            <div class="contact-info">
+                <div class="card">
+                    <div class="icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="details">
+                            <h3>Address</h3>
+                            <p>NZRE CTC SOCIETY LTD. BARODA HOUSE, NEW-DELHI</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="icon">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="details">
+                            <h3>PHONE NUMBER</h3>
+                            <p>01123385608</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="icon">
+                        <i class="fas fa-fax"></i>
+                        <div class="details">
+                            <h3>FAX</h3>
+                            <p>122-388789874</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="icon">
+                        <i class="far fa-envelope"></i>
+                        <div class="details">
+                            <h3>EMAIL</h3>
+                            <p>nzcectcsociety@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-map">
+                <div class="contactForm">
+                    <h3>Send Message</h3>
+                    <div class="inputBox">
+                        <input type="text" placeholder="Name">
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" placeholder="Email">
+                    </div>
+                    <div class="inputBox">
+                        <textarea value="Name" placeholder="Enter Message"></textarea>
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" value="Send"></textarea>
+                    </div>
+                </div>
+                <div class="map" id="map">
+
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7004.991952806777!2d77.2285616!3d28.6148937!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2d1cf404afb%3A0xdb889dfab60ebcdc!2sBaroda%20House%2C%20New%20Delhi%2C%20Delhi%20110001!5e0!3m2!1sen!2sin!4v1643882866843!5m2!1sen!2sin"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    {%endblock%}
+</body>
+
+</html>

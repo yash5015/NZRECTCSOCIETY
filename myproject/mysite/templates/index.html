@@ -1,0 +1,115 @@
+{%extends 'base.html'%}
+
+
+<body onload="slider()">
+
+    {%block body%}
+    {%load static%}
+    <div class="banner">
+        <div class="slider">
+            <img src="{%static 'assets/bg1.jpg'%}" alt="" id="slideImg">
+        </div>
+        <div class="overlay"></div>
+    </div>
+
+    <section class="aboutus" id="aboutus">
+        <div class="container">
+            <h1>ABOUT US</h1>
+
+            <div class="aboutin">
+                <div class="persons">
+                    <div class="row personsrow">
+                        <div class="persons">
+                            <img src="{%static 'assets/avatar.png' %}" alt="">
+                            <p>chairman</p>
+                        </div>
+                        <div class="persons">
+                            <img src="{%static 'assets/avatar.png' %}" alt="">
+                            <p>chairman</p>
+                        </div>
+                        <div class="persons">
+                            <img src="{%static 'assets/avatar.png' %}" alt="">
+                            <p>chairman</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="aboutname">
+                    <p>NZRECTCS(The Northern Zone Railway Employees Co-operative thrift and credit society ltd. regd
+                        office baroda house new delhi.)
+                        The authorized share capital of the society is of Rs. 500000000/- divided into 50000000
+                        shares
+                        of Rs. 10/- each. The Following persons are eligible to admitted as ordinary members: He is
+                        permanent Railway employee or a temporary employee having not less than 03 months service.
+                        (The
+                        03 months service will be counted after screening in case of casual employee) and is
+                        employee in any of the office under the control of Northern Railway Head Quarters
+                        Office, Divisional
+                        Railway
+                        Manager, Northern Railway Delhi, Firozepur, Ambala, Offices, Mechanical Workshop,
+                        Northern
+                        Railway, Amritsar, Carriage and wagon Workshop, Northern Railway Jagadhari Workshop,
+                        Signal.
+                    </p>
+
+                </div>
+                <a href="{%url 'about' %}"><button>
+                        Read More
+                    </button></a>
+                <div class="chairman-message" id="cmmessage">
+                    <p>Chairman Message:</p>
+                    <p id="cmtext"></p>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section class="articles" id="articles">
+        <div class="container">
+            <h1>Articles</h1>
+            <div class="row articles-row">
+                <div class="cardphoto">
+                    <img src="../static/assets/newpaper.jpg" alt="">
+                    <div class="photoinfo">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis non quis molestiae enim.
+                            Porro accusantium qui illo, illum ipsum expedita minus molestiae corporis sit magnam,
+                            facilis eveniet non quaerat laboriosam fugit, vitae cumque. Sequi, corrupti accusantium
+                            praesentium tempora rerum consectetur aliquid harum impedit possimus omnis dolorem neque
+                            suscipit amet at.</p>
+                    </div>
+
+                </div>
+                <div class="cardphoto">
+                    <img src="../static/assets/newpaper.jpg" alt="">
+                    <div class="photoinfo">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis non quis molestiae enim.
+                            Porro accusantium qui illo, illum ipsum expedita minus molestiae corporis sit magnam,
+                            facilis eveniet non quaerat laboriosam fugit, vitae cumque. Sequi, corrupti accusantium
+                            praesentium tempora rerum consectetur aliquid harum impedit possimus omnis dolorem neque
+                            suscipit amet at.</p>
+                    </div>
+
+                </div>
+                <div class="cardphoto">
+                    <img src="../static/assets/newpaper.jpg" alt="">
+                    <div class="photoinfo">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis non quis molestiae enim.
+                            Porro accusantium qui illo, illum ipsum expedita minus molestiae corporis sit magnam,
+                            facilis eveniet non quaerat laboriosam fugit, vitae cumque. Sequi, corrupti accusantium
+                            praesentium tempora rerum consectetur aliquid harum impedit possimus omnis dolorem neque
+                            suscipit amet at.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="{%static 'script/script.js'%}"></script>
+
+    {%endblock%}
+</body>
+
+</html>

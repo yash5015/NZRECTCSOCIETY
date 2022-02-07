@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% block body %}
+
+<h1>{{branch}}</h1>
+{% load static %}
+
+<section class="branchfiles">
+  <div class="container">
+    <div class="files-row">
+      <div class="files-container">
+        {% for key,values in dictt.items %} {% for i in values %}
+        <div class="file">
+          <a href="/media/{{i}}" target="_blank"
+            ><img src="{% static 'assets/pdflogo2.png' %}" alt=""
+          /></a>
+
+          <p>{{i}}</p>
+          <form action="{% url 'deletefile' key i %}" method="POST">
+            {% csrf_token %}
+            <button type="submit">Delete File</button>
+          </form>
+        </div>
+        {% endfor %} {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock body %}

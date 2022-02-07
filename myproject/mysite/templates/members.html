@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+
+
+<body>
+
+    {%block body%}
+    {% load static %}
+    <h1>members</h1>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {%csrf_token%}
+        <input type="text" name="bname" id="" placeholder="Enter Branch Name" required>
+        <input type="file" name="bfile" id="" multiple>
+        <button type="submit">Upload Files</button>
+
+    </form>
+
+    <section class="members">
+        <div class="container">
+            <div class="folder-row">
+                <div class="folder-container">
+                    {% for branch in branch_files %}
+                    {% for i in branch %}
+                    <div class="folder">
+                        <a href="./branchfiles/{{i}}"><img src="{% static 'assets/folder2.png' %}" alt=""></a>
+                        <p> {{i}}</p>
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {%endblock%}
+</body>
+
+</html>

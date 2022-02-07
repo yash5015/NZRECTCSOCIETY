@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block body %}
+
+<h1>Admin Panel</h1>
+{% load static %}
+
+<h2>
+    chairman message
+</h2>
+
+<form action="" method="POST">
+    {%csrf_token%}
+    <label for="">Enter Chairman message</label>
+    <textarea name="message" id="textcmmessage" cols="30" rows="10" placeholder="Enter message">
+    </textarea>
+    <button onclick="cmMessage()">Post</button>
+</form>
+<script src="{%static 'script/script.js'%}"></script>
+
+
+{% endblock body %}
