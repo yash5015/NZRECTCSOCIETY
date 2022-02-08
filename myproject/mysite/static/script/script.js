@@ -1,7 +1,6 @@
 var slideImg = document.getElementById("slideImg");
 
 var images = new Array(
-  "../static/assets/bg1.jpg",
   "../static/assets/baroda_house.jpg",
   "../static/assets/bg1.jpg",
   "../static/assets/baroda_house.jpg"
@@ -27,3 +26,9 @@ function cmMessage() {
 }
 
 document.getElementById("cmtext").innerHTML = localStorage.getItem("message");
+
+function disableMessage() {
+  console.log("hi");
+  let ele = document.getElementById("loan-message");
+  ele.style.display = "none";
+}

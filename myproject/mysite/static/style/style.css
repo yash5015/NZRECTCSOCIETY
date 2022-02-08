@@ -33,7 +33,7 @@
   height: 100px;
 }
 
-.name h2 {
+h2 {
   text-transform: uppercase;
   font-family: "Oswald", sans-serif;
 }
@@ -251,6 +251,11 @@ section {
   justify-content: center;
   text-align: center;
 }
+.persons img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+}
 .aboutname {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -273,6 +278,7 @@ button {
   background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
   color: white;
   font-family: cursive;
+  margin: 20px 0;
   border-radius: 5px;
 }
 
@@ -280,15 +286,16 @@ button {
   display: flex;
   justify-content: center;
 }
-table {
+.tableboard {
   border-collapse: collapse;
   position: relative;
   width: 75%;
 }
-td {
+td,
+th {
   border: 1px solid #d8b4b4;
   text-align: center;
-  padding: 8px;
+  padding: 15px;
 }
 tr:nth-child(even) {
   background-color: #dddddd;
@@ -366,15 +373,17 @@ tr:nth-child(even) {
   align-items: center;
   width: 350px;
   margin: 10px;
+  text-align: center;
   padding: 10px;
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 50px rgb(0 0 0 / 10%);
 }
 .cardphoto img {
   position: relative;
   width: 100%;
 }
 .photoinfo {
-  padding-top: 30px;
+  background: #e4d4d2;
+  padding: 30px;
 }
 
 /* ###################### end articles #################### */
@@ -406,6 +415,48 @@ tr:nth-child(even) {
 
 /* ################## end branchfiles ########## */
 
+/* ############################## loan ################################# */
+
+.loan-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 150px;
+  height: 150px;
+
+  margin: 30px;
+}
+.loan-card img {
+  position: relative;
+  width: 90%;
+}
+
+.loaninput {
+  display: flex;
+  flex-direction: column;
+}
+.loan-message {
+  background: rgba(0, 0, 0, 0.7);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  height: 45px;
+  border-radius: 4px;
+  color: #2cb5e8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  overflow: hidden;
+  transition: 1s;
+}
+.cross:hover {
+  cursor: pointer;
+}
+/* ############################## end loan ################################# */
+
 /* ###############contact us############### */
 .contactrow {
   height: 500px;
@@ -428,8 +479,6 @@ tr:nth-child(even) {
 .detailbox p {
   color: #fff;
 }
-
-/* ############################## contact us ##################### */
 
 .contact-map {
   display: flex;
@@ -485,7 +534,7 @@ tr:nth-child(even) {
   cursor: pointer;
 }
 
-/* ######################## contact info ###################### */
+/* ####### contact info ######### */
 
 .contact-info {
   display: flex;
@@ -521,7 +570,7 @@ tr:nth-child(even) {
   color: darkmagenta;
 }
 
-/* map */
+/* ########## map ########### */
 
 .map iframe {
   width: 100%;
@@ -534,4 +583,83 @@ tr:nth-child(even) {
 
   width: 500px;
   height: 450px;
+}
+
+/* ################################ end contact us ##################### */
+
+/* ####################### admin panel ########################### */
+
+.post-upload {
+  display: flex;
+  justify-content: space-evenly;
+}
+.post-chairman,
+.upload-members {
+  width: 30%;
+}
+.container h2 {
+  text-align: center;
+  margin: 20px;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+}
+
+.userformdiv {
+  display: flex;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+}
+
+label {
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+.tableuser {
+  border-collapse: collapse;
+  position: relative;
+  width: 100%;
+}
+
+td img {
+  width: 30px;
+  height: 30px;
+}
+
+.tablecol {
+  display: flex;
+  flex-direction: column;
+}
+
+.memberinput {
+  display: flex;
+  flex-direction: column;
+}
+input[type="file"] {
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+  border: none;
+  padding: 8px;
+  font-size: 20px;
+  background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+  color: white;
+  font-family: cursive;
+  margin: 20px 0;
+  border-radius: 5px;
+}
+input[type="text"] {
+  height: 36px;
+  border: 2px solid #7070ea;
+  border-radius: 5px;
+}
+.cminput {
+  display: flex;
+  flex-direction: column;
+}
+.cminput textarea {
+  border: 2px solid #7070ea;
+  border-radius: 5px;
 }

@@ -5,17 +5,9 @@
 
     {%block body%}
     {% load static %}
-    <h1>members</h1>
-    <form action="" method="POST" enctype="multipart/form-data">
-        {%csrf_token%}
-        <input type="text" name="bname" id="" placeholder="Enter Branch Name" required>
-        <input type="file" name="bfile" id="" multiple>
-        <button type="submit">Upload Files</button>
-
-    </form>
-
     <section class="members">
         <div class="container">
+            <h1>members</h1>
             <div class="folder-row">
                 <div class="folder-container">
                     {% for branch in branch_files %}

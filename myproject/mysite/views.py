@@ -1,6 +1,6 @@
-from urllib import response
+from django.contrib import messages
 from django.shortcuts import render, HttpResponseRedirect, redirect
-from .models import Branch
+from .models import Branch, Loanform
 from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse, HttpResponseNotFound
 
@@ -16,11 +16,6 @@ def about(request):
 
 
 def members(request):
-    if request.method == "POST":
-        name = request.POST['bname']
-        files = request.FILES.getlist('bfile')
-        for file in files:
-            Branch(bname=name, bfiles=file).save()
 
     branch_files = Branch.objects.values_list('bname').distinct()
 
@@ -30,6 +25,19 @@ def members(request):
 
 def articles(request):
     return render(request, 'articles.html')
+
+
+def loan(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        phno = request.POST['phno']
+        regno = request.POST['regno']
+        userform = request.POST['userform']
+        userloan = Loanform(name=name, phno=phno,
+                            regno=regno, userform=userform)
+        userloan.save()
+        messages.success(request, "your form have been submitted successfully")
+    return render(request, 'loan.html')
 
 
 def contact(request):
@@ -62,4 +70,13 @@ def deletefile(request, branch, filename):
 
 
 def adminpanel(request):
-    return render(request, 'admin.html')
+    if request.method == "POST":
+        name = request.POST['bname']
+        files = request.FILES.getlist('bfile')
+        for file in files:
+            Branch(bname=name, bfiles=file).save()
+        messages.success(request, 'Your files has been uploaded successfully')
+
+    userforms = Loanform.objects.all()
+    context = {"userforms": userforms}
+    return render(request, 'admin.html', context)

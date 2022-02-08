@@ -1,20 +1,83 @@
-{% extends 'base.html' %} {% block body %}
-
+{% extends 'base.html' %} {% block body %} {% load static %} {% if messages %}
+{% for message in messages %}
+<div class="loan-message" id="loan-message">
+  <strong>{{message}}</strong>
+  <div class="cross" id="cross" onclick="disableMessage()">&#10060;</div>
+</div>
+{% endfor %} {% endif %}
 <h1>Admin Panel</h1>
-{% load static %}
+<div class="chairman message">
+  <div class="container">
+    <div class="row post-upload">
+      <div class="post-chairman">
+        <h2>chairman message</h2>
+        <form action="" method="POST">
+          {%csrf_token%}
+          <div class="cminput">
+            <label for="">Enter Chairman message</label>
+            <textarea
+              name="message"
+              id="textcmmessage"
+              cols="30"
+              rows="2"
+              placeholder="Enter message"
+            ></textarea>
+          </div>
+          <button onclick="cmMessage()">Post</button>
+        </form>
+      </div>
+      <div class="upload-members">
+        <h2>Upload members</h2>
+        <form action="" method="POST" enctype="multipart/form-data">
+          {%csrf_token%}
+          <div class="memberinput">
+            <label for="bname">Branch Name</label>
+            <input
+              type="text"
+              name="bname"
+              id=""
+              placeholder="Enter Branch Name"
+              required
+            />
+            <input type="file" name="bfile" id="" multiple />
+          </div>
+          <button type="submit">Upload Files</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+<hr>
+  <div class="container">
+    <h2>Loan Form Data</h2>
+    <div class="userformdiv">
+      <div class="userform-table">
+        <table class="tableuser">
+          <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Registration id</th>
+            <th>Form</th>
+          </tr>
+          {% for userform in userforms %}
+          <tr>
+            <td>{{userform.name}}</td>
+            <td>{{userform.phno}}</td>
+            <td>{{userform.regno}}</td>
+            <td class="tablecol">
+              <a href="/media/{{userform.userform}}" target="_blank"
+                ><img src="{% static 'assets/pdflogo2.png' %}" alt="" /></a
+              >{{userform.userform}}
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+  </div>
 
-<h2>
-    chairman message
-</h2>
+  <script src="{%static 'script/script.js'%}"></script>
 
-<form action="" method="POST">
-    {%csrf_token%}
-    <label for="">Enter Chairman message</label>
-    <textarea name="message" id="textcmmessage" cols="30" rows="10" placeholder="Enter message">
-    </textarea>
-    <button onclick="cmMessage()">Post</button>
-</form>
-<script src="{%static 'script/script.js'%}"></script>
-
-
-{% endblock body %}
+  {% endblock body %}
+</section>

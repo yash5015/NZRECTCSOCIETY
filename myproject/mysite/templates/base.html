@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.12.313/build/pdf.min.js"></script>
@@ -40,10 +41,12 @@
                 <div class="menuToggle" onclick="toggleMenu();"></div>
                 <ul class="navigation">
                     <li><a href="/" onclick="toggleMenu();">HOME</a></li>
-                    <li><a href="/#aboutus" onclick="toggleMenu();">ABOUT US</a></li>
+                    <li><a href="{%url 'about' %}" onclick="toggleMenu();">ABOUT US</a></li>
                     <li><a href="{%url 'members'%}" onclick="toggleMenu();">MEMBERS</a></li>
                     <li><a href=" {%url 'articles'%}" onclick="toggleMenu();">ARTICLES</a></li>
+                    <li><a href=" {%url 'loan'%}" onclick="toggleMenu();">LOAN</a></li>
                     <li><a href=" {%url 'contact'%}" onclick="toggleMenu();">CONTACT US</a></li>
+                    <li><a href=" {%url 'adminpanel'%}" onclick="toggleMenu();">ADMIN PANEL</a></li>
                 </ul>
         </div>
         </nav>
@@ -63,23 +66,25 @@
                             <h3>
                                 Site Map
                             </h3>
-                            <p><a href="">HOME</a></p>
-                            <p><a href="">ABOUT US</a></p>
-                            <p><a href="">MEMBER</a></p>
-                            <p><a href="">ARTICLE</a></p>
-                            <p><a href="">CONTACT US</a></p>
+                            <p><a href="/">HOME</a></p>
+                            <p><a href="{%url 'about' %}">ABOUT US</a></p>
+                            <p><a href="{%url 'members' %}">MEMBER</a></p>
+                            <p><a href="{%url 'articles' %}">ARTICLE</a></p>
+                            <p><a href="{%url 'contact' %}">CONTACT US</a></p>
 
                         </div>
                         <div class="footerinfo">
                             <h3>
                                 Important Links
                             </h3>
-                            <p><a href="https://www.railway-technology.com/projects/northbengalsikkimrai/">-North
+                            <p><a href="https://www.railway-technology.com/projects/northbengalsikkimrai/"
+                                    target="_blank">-North
                                     Bengal-Sikkim Railway Link, India</a></p>
-                            <p> <a
-                                    href="http://www.indianrail.gov.in/enquiry/StaticPages/StaticEnquiry.jsp?StaticPage=index.html">-INDIAN
+                            <p> <a href="http://www.indianrail.gov.in/enquiry/StaticPages/StaticEnquiry.jsp?StaticPage=index.html"
+                                    target="_blank">-INDIAN
                                     RAILWAYS PASSENGER RESERVATION ENQUIRY</a></p>
-                            <p> <a href="https://nr.indianrailways.gov.in/#forward">-Northern Railway Tenders</a></p>
+                            <p> <a href="https://nr.indianrailways.gov.in/#forward" target="_blank">-Northern Railway
+                                    Tenders</a></p>
                         </div>
                         <div class="footerinfo">
                             <h3>

@@ -1,0 +1,70 @@
+{%extends 'base.html'%}
+
+
+<body>
+
+    {%block body%}
+    {%load static%}
+    
+    {% if messages %}
+    {% for message in messages  %}
+    <div class="loan-message" id="loan-message">
+            <strong>{{message}}</strong>
+        <div class="cross" id="cross" onclick="disableMessage()">&#10060;</div>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <section class="loan" id="loan">
+        <div class="container">
+            <h1>loan</h1>
+            <div class="row ">
+                
+                <div class="loan-card">
+                    <a href="media/example_loan.pdf" target="_blank"
+                    ><img src="{% static 'assets/pdflogo2.png' %}" alt=""/></a>
+                    <p>example_loan.pdf</p>
+                </div>
+                <div class="loan-card">
+                    <a href="media/example_loan.pdf" target="_blank"
+                    ><img src="{% static 'assets/pdflogo2.png' %}" alt=""/></a>
+                    <p>example_loan.pdf</p>
+                </div>
+                <div class="loan-card">
+                    <a href="media/example_loan.pdf" target="_blank"
+                    ><img src="{% static 'assets/pdflogo2.png' %}" alt=""/></a>
+                    <p>example_loan.pdf</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<section>
+    <div class="container">
+        <h2>Submit Your loan Application</h2>
+        <form action="" method="POST">
+        {% csrf_token %}
+        <div class="loaninput">
+        <label for="name">Name</label>
+        <input type="text"name="name" placeholder="Enter your Name" required>
+    </div>
+    <div class="loaninput">
+        <label for="phoneno">Phone Number</label>
+        <input type="text" name="phno" id="" maxlength="11" minlength="10" placeholder="Enter Your Phone Number" required>
+    </div>
+    <div class="loaninput">
+        <label for="regno">Enter Registration Id</label>
+        <input type="text" name="regno" required>
+    </div>
+    <div class="loaninput">
+        <input type="file" name="userform" id="" >
+    </div>
+        <button type="submit">Upload File</button>
+            
+        </form>
+
+    </div>
+</section>
+<script src="{%static 'script/script.js'%}"></script>
+    {%endblock%}
+</body>
+
+</html>
