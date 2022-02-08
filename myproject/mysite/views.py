@@ -32,10 +32,12 @@ def loan(request):
         name = request.POST['name']
         phno = request.POST['phno']
         regno = request.POST['regno']
-        userform = request.POST['userform']
-        userloan = Loanform(name=name, phno=phno,
-                            regno=regno, userform=userform)
-        userloan.save()
+        # userform = request.POST['userform']
+        # userform = request.FILES.getlist('userform')
+        files = request.FILES.getlist('userform')
+        for file in files:
+            Loanform(name=name, phno=phno, regno=regno, userform=file).save()
+
         messages.success(request, "your form have been submitted successfully")
     return render(request, 'loan.html')
 

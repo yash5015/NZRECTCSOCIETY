@@ -11,7 +11,7 @@
     <div class="row post-upload">
       <div class="post-chairman">
         <h2>chairman message</h2>
-        <form action="" method="POST">
+        <form action="" method="">
           {%csrf_token%}
           <div class="cminput">
             <label for="">Enter Chairman message</label>
@@ -28,7 +28,7 @@
       </div>
       <div class="upload-members">
         <h2>Upload members</h2>
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="" method="POST">
           {%csrf_token%}
           <div class="memberinput">
             <label for="bname">Branch Name</label>
