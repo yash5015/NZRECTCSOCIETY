@@ -1,9 +1,13 @@
+from urllib import response
 from django.contrib import messages
 from django.shortcuts import render, HttpResponseRedirect, redirect
+
+from myproject.settings import SECRET_KEY
 from .models import Branch, Loanform
 from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse, HttpResponseNotFound
-
+import json
+import requests
 # Create your views here.
 
 
@@ -34,11 +38,26 @@ def loan(request):
         regno = request.POST['regno']
         # userform = request.POST['userform']
         # userform = request.FILES.getlist('userform')
-        files = request.FILES.getlist('userform')
-        for file in files:
-            Loanform(name=name, phno=phno, regno=regno, userform=file).save()
 
-        messages.success(request, "your form have been submitted successfully")
+        clientKey = request.POST['g-recaptcha-response']
+        secretKey = '6LeR-WgeAAAAACqn_XhFpkd80BMRqn1gJqHSFCVq'
+        captchaData = {'secret': secretKey, 'response': clientKey}
+        req = requests.post(
+            'https://www.google.com/recaptcha/api/siteverify', data=captchaData)
+
+        response = json.loads(req.text)
+        verify = response['success']
+        if verify:
+            files = request.FILES.getlist('userform')
+            for file in files:
+                Loanform(name=name, phno=phno,
+                         regno=regno, userform=file).save()
+            messages.success(
+                request, "your form have been submitted successfully")
+        else:
+            messages.error(
+                request, "Please verify recaptcha")
+        return render(request, 'loan.html')
     return render(request, 'loan.html')
 
 
@@ -78,7 +97,16 @@ def adminpanel(request):
         for file in files:
             Branch(bname=name, bfiles=file).save()
         messages.success(request, 'Your files has been uploaded successfully')
-
-    userforms = Loanform.objects.all()
+        return HttpResponseRedirect("/members")
+    userforms = Loanform.objects.all().order_by('-id')
     context = {"userforms": userforms}
     return render(request, 'admin.html', context)
+
+
+def deleteform(request, id):
+    if request.method=="POST":
+        pi = Loanform.objects.get(id=id)
+        pi.delete()
+        # return render(request, "admin.html")
+        return HttpResponseRedirect("/adminpanel")
+    return render(request,"admin.html")

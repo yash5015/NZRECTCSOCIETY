@@ -7,4 +7,4 @@ admin.site.register(Branch)
 
 @admin.register(Loanform)
 class LoanformAdmin(admin.ModelAdmin):
-    list_display = ('name', 'phno', 'regno', 'userform')
+    list_display = ('name', 'phno', 'regno', 'userform', 'date')

@@ -55,14 +55,17 @@
         <input type="text" name="regno" required>
     </div>
     <div class="loaninput">
-        <input type="file" name="userform" id="" >
+        <input type="file" name="userform" id="" required>
     </div>
+
+    <div class="g-recaptcha" data-sitekey="6LeR-WgeAAAAAPgTuI0q-gGO8-OFGD7F2tndTbPd"></div>
         <button type="submit">Upload File</button>
             
         </form>
 
     </div>
 </section>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="{%static 'script/script.js'%}"></script>
     {%endblock%}
 </body>

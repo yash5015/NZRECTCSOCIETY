@@ -1,5 +1,6 @@
 from django.db import models
 from django.core import validators
+import datetime
 # Create your models here.
 
 
@@ -17,6 +18,7 @@ class Loanform(models.Model):
         validators=[validators.MinLengthValidator(10)], max_length=11, blank=False)
     regno = models.CharField(max_length=25, blank=False)
     userform = models.FileField(upload_to="", blank=False)
+    date = models.DateField(default=datetime.datetime.today)
 
     def __str__(self):
         return self.regno

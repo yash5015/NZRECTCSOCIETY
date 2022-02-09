@@ -11,6 +11,7 @@ urlpatterns = [
     path('contact', views.contact, name='contact'),
     path('branchfiles/<branchwise>', views.branchfiles, name='branchfiles'),
     path('deletefile/<branch>/<filename>', views.deletefile, name='deletefile'),
-    path('adminpanel', views.adminpanel, name='adminpanel')
+    path('adminpanel', views.adminpanel, name='adminpanel'),
+    path('deleteform/<int:id>', views.deleteform, name='deleteform'),
 
 ]
