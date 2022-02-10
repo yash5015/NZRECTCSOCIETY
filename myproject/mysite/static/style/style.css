@@ -19,10 +19,18 @@
   color: #fff;
   /* background: #497aa5; */
 }
-.branding img {
+/* .branding img {
   height: 120px;
   position: relative;
   z-index: 1;
+} */
+.branding-logo img {
+  width: 170px;
+  height: 170px;
+}
+.reg img {
+  width: 130px;
+  height: 130px;
 }
 .branding .name {
   width: 65%;
@@ -163,7 +171,7 @@ h3 {
   width: 95%;
   display: flex;
   /* align-items: center; */
-  justify-content: space-between;
+  justify-content: space-around;
   height: 265px;
   border-bottom: 1px solid rgb(249, 226, 227);
 }
@@ -555,7 +563,7 @@ tr:nth-child(even) {
 }
 
 .icon i {
-  font-size: 3rem;
+  font-size: 2rem;
 
   color: #8f004f;
 }
@@ -566,7 +574,7 @@ tr:nth-child(even) {
   color: #797475;
 }
 .details p {
-  line-height: 25px;
+  line-height: 18px;
   color: darkmagenta;
 }
 
@@ -628,9 +636,8 @@ td img {
   height: 30px;
 }
 
-.tablecol {
-  display: flex;
-  flex-direction: column;
+.tablecol a {
+  display: block;
 }
 
 .memberinput {

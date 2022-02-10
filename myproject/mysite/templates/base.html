@@ -18,19 +18,23 @@
 </head>
 
 
-<body style=" background: rgb(249, 226, 227);">
+<body onload="slider()" style=" background: rgb(249, 226, 227);">
 
     <div class=" navbannerbg">
         <div class="navbanneroverlayy">
             <div class="branding">
-                <img src="{%static 'assets/logo1.png'%}" alt="">
+                <div class="branding-logo">
+                    <img src="{%static 'assets/newlogo.png'%}" alt="">
+                </div>
                 <div class="name">
                     <h2>The northern zone railway employees co-operative thrift and credit society ltd. regd office
                         baroda
                         house
                         new delhi. </h2>
                 </div>
-                <img src="{%static 'assets/reg2.png'%}" alt="">
+                <div class="reg">
+                    <img src="{%static 'assets/reg3.png'%}" alt="">
+                </div>
 
             </div>
 
@@ -46,7 +50,10 @@
                     <li><a href=" {%url 'articles'%}" onclick="toggleMenu();">ARTICLES</a></li>
                     <li><a href=" {%url 'loan'%}" onclick="toggleMenu();">LOAN</a></li>
                     <li><a href=" {%url 'contact'%}" onclick="toggleMenu();">CONTACT US</a></li>
+                    {%if user.is_authenticated%}
                     <li><a href=" {%url 'adminpanel'%}" onclick="toggleMenu();">ADMIN PANEL</a></li>
+                    <li><a href=" {%url 'logout'%}" onclick="toggleMenu();">LOGOUT</a></li>
+                    {%endif%}
                 </ul>
         </div>
         </nav>
@@ -73,19 +80,7 @@
                             <p><a href="{%url 'contact' %}">CONTACT US</a></p>
 
                         </div>
-                        <div class="footerinfo">
-                            <h3>
-                                Important Links
-                            </h3>
-                            <p><a href="https://www.railway-technology.com/projects/northbengalsikkimrai/"
-                                    target="_blank">-North
-                                    Bengal-Sikkim Railway Link, India</a></p>
-                            <p> <a href="http://www.indianrail.gov.in/enquiry/StaticPages/StaticEnquiry.jsp?StaticPage=index.html"
-                                    target="_blank">-INDIAN
-                                    RAILWAYS PASSENGER RESERVATION ENQUIRY</a></p>
-                            <p> <a href="https://nr.indianrailways.gov.in/#forward" target="_blank">-Northern Railway
-                                    Tenders</a></p>
-                        </div>
+
                         <div class="footerinfo">
                             <h3>
                                 Contact Info

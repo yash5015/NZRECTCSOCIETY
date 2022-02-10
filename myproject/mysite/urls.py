@@ -13,5 +13,7 @@ urlpatterns = [
     path('deletefile/<branch>/<filename>', views.deletefile, name='deletefile'),
     path('adminpanel', views.adminpanel, name='adminpanel'),
     path('deleteform/<int:id>', views.deleteform, name='deleteform'),
+    path('login',views.user_login,name="login"),
+    path('logout',views.user_logout,name="logout"),
 
 ]

@@ -9,15 +9,15 @@
       <div class="files-container">
         {% for key,values in dictt.items %} {% for i in values %}
         <div class="file">
-          <a href="/media/{{i}}" target="_blank"
-            ><img src="{% static 'assets/pdflogo2.png' %}" alt=""
-          /></a>
+          <a href="/media/{{i}}" target="_blank"><img src="{% static 'assets/pdflogo2.png' %}" alt="" /></a>
 
           <p>{{i}}</p>
+          {%if user.is_authenticated%}
           <form action="{% url 'deletefile' key i %}" method="POST">
             {% csrf_token %}
             <button type="submit">Delete File</button>
           </form>
+          {%endif%}
         </div>
         {% endfor %} {% endfor %}
       </div>
