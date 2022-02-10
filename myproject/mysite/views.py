@@ -138,11 +138,26 @@ def user_login(request):
             if fm.is_valid():
                 uname=fm.cleaned_data['username']
                 upass=fm.cleaned_data['password']
-                user=authenticate(username=uname,password=upass)
-                if user is not None:
-                    login(request,user)
-                    messages.success(request,"Login Successfully ")
-                    return HttpResponseRedirect('/adminpanel')
+
+                clientKey = request.POST['g-recaptcha-response']
+                secretKey = '6LeR-WgeAAAAACqn_XhFpkd80BMRqn1gJqHSFCVq'
+                captchaData = {'secret': secretKey, 'response': clientKey}
+                req = requests.post(
+                    'https://www.google.com/recaptcha/api/siteverify', data=captchaData)
+
+                response = json.loads(req.text)
+                verify = response['success']
+                if verify:
+                    user=authenticate(username=uname,password=upass)
+                    if user is not None:
+                        login(request,user)
+                        messages.success(request,"Login Successfully ")
+                        return HttpResponseRedirect('/adminpanel')
+                else:
+                    messages.error(
+                        request, "Please verify recaptcha")
+                return render(request, 'login.html')
+                
         else:
             fm=AuthenticationForm()
         return render(request,'login.html',{'form':fm})

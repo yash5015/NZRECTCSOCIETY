@@ -154,25 +154,20 @@ h3 {
   background: rgb(102, 7, 70);
   border-radius: 13px;
   width: 900px;
-  height: 340px;
+  height: 300px;
   margin-top: 45px;
   padding-left: 65px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: column;
   align-items: center;
 }
-.footercontainer p {
-  margin-top: 10px;
-}
+
 .footerrow {
-  /* height: 330px; */
   position: relative;
   width: 95%;
   display: flex;
-  /* align-items: center; */
   justify-content: space-around;
-  height: 265px;
   border-bottom: 1px solid rgb(249, 226, 227);
 }
 footer p {
@@ -263,6 +258,9 @@ section {
   width: 220px;
   height: 220px;
   border-radius: 50%;
+}
+.persons p {
+  font-size: 15px;
 }
 .aboutname {
   display: -webkit-box;
@@ -661,6 +659,7 @@ input[type="text"] {
   height: 36px;
   border: 2px solid #7070ea;
   border-radius: 5px;
+  margin: 10px 0;
 }
 .cminput {
   display: flex;
@@ -670,3 +669,21 @@ input[type="text"] {
   border: 2px solid #7070ea;
   border-radius: 5px;
 }
+
+/* ########################### login form ################## */
+
+.loginform {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+input[type="password"] {
+  height: 36px;
+  border: 2px solid #7070ea;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+/* ########################### end login form ################## */
