@@ -5,6 +5,14 @@
 <body>
 
     {%block body%}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="loan-message" id="loan-message">
+        <strong>{{message}}</strong>
+        <div class="cross" id="cross" onclick="disableMessage()">&#10060;</div>
+    </div>
+    {% endfor %}
+    {% endif %}
     <section class="contact" id="contactus">
         <div class="container">
             <h1>contact us</h1>
@@ -49,18 +57,25 @@
             <div class="contact-map">
                 <div class="contactForm">
                     <h3>Send Message</h3>
-                    <div class="inputBox">
-                        <input type="text" placeholder="Name">
-                    </div>
-                    <div class="inputBox">
-                        <input type="text" placeholder="Email">
-                    </div>
-                    <div class="inputBox">
-                        <textarea value="Name" placeholder="Enter Message"></textarea>
-                    </div>
-                    <div class="inputBox">
-                        <input type="submit" value="Send"></textarea>
-                    </div>
+                    <form action="{%url 'contact'%}" method="post">
+                        {%csrf_token%}
+
+                        <div class="inputBox">
+                            <input type="text" name="name" placeholder="Name" required>
+                        </div>
+                        <div class="inputBox">
+                            <!-- <input type="text" name="email" placeholder="Phone Number"> -->
+                            <input type="text" name="phno" id="" maxlength="11" minlength="10"
+                                placeholder="Enter Your Phone Number" required>
+                        </div>
+                        <div class="inputBox">
+                            <textarea value="Name" name="textmsg" placeholder="Enter Message"></textarea>
+                        </div>
+                        <div class="inputBox">
+                            <div class="g-recaptcha" data-sitekey="6LeR-WgeAAAAAPgTuI0q-gGO8-OFGD7F2tndTbPd"></div>
+                            <input type="submit" value="Send">
+                        </div>
+                    </form>
                 </div>
                 <div class="map" id="map">
 
@@ -71,6 +86,7 @@
             </div>
         </div>
     </section>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     {%endblock%}
 </body>
 

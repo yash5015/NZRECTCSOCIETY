@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.shortcuts import render, HttpResponseRedirect, redirect
 from django.template import RequestContext
 
-from .models import Branch, Loanform
+from .models import Branch, Contact, Loanform
 from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse, HttpResponseNotFound
 import json
@@ -66,6 +66,31 @@ def loan(request):
 
 
 def contact(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        phno = request.POST['phno']
+        textmsg = request.POST['textmsg']
+        # userform = request.POST['userform']
+        # userform = request.FILES.getlist('userform')
+
+        clientKey = request.POST['g-recaptcha-response']
+        secretKey = '6LeR-WgeAAAAACqn_XhFpkd80BMRqn1gJqHSFCVq'
+        captchaData = {'secret': secretKey, 'response': clientKey}
+        req = requests.post(
+            'https://www.google.com/recaptcha/api/siteverify', data=captchaData)
+
+        response = json.loads(req.text)
+        verify = response['success']
+        if verify:
+           
+            Contact(name=name, phno=phno,
+                         message=textmsg).save()
+            messages.success(
+                request, "Your query have been posted successfully")
+        else:
+            messages.error(
+                request, "Please verify recaptcha")
+        return render(request, 'contact.html')
     return render(request, 'contact.html')
 
 
@@ -78,10 +103,10 @@ def branchfiles(request, branchwise):
             if branchwise in i:
                 dict_list.append(i[1])
         dictt[branchwise] = dict_list
-        print(dictt)
-        for key, values in dictt.items():
-            for i in values:
-                print(i)
+        # print(dictt)
+        # for key, values in dictt.items():
+        #     for i in values:
+                # print(i)
 
         context = {"dictt": dictt, "branch": branchwise}
     return render(request, 'branchfiles.html', context)
@@ -104,7 +129,8 @@ def adminpanel(request):
             messages.success(request, 'Your files has been uploaded successfully')
             return HttpResponseRedirect("/members")
         userforms = Loanform.objects.all().order_by('-id')
-        context = {"userforms": userforms}
+        usercontact=Contact.objects.all().order_by('-id')
+        context = {"userforms": userforms,'usercontacts':usercontact}
         return render(request, 'admin.html', context)
     else:
         return HttpResponseRedirect('/login')
@@ -116,7 +142,33 @@ def deleteform(request, id):
         # return render(request, "admin.html")
         return HttpResponseRedirect("/adminpanel")
     return render(request,"admin.html")
+def deletecontact(request, id):
+    if request.method=="POST":
+        pi = Contact.objects.get(id=id)
+        pi.delete()
+        # return render(request, "admin.html")
+        return HttpResponseRedirect("/adminpanel")
+    return render(request,"admin.html")
 
+def formstatus(request,id):
+    pp=Loanform.objects.get(id=id)
+    ppsts=pp.status
+    # print(ppsts)
+    if request.method=="POST":
+        pi=Loanform.objects.get(id=id)
+        if(ppsts):
+            pi.status='False'
+            # print(pi.name," ",pi.status)
+            pp.status='False'
+        else:
+            pi.status='True'
+            # print(pi.name," ",pi.status)
+            pp.status='True'
+        # Loanform(status=sts).save()
+        # print(pi.name," ",pi.status)
+        pp.save()
+        return HttpResponseRedirect("/adminpanel")
+    return render(request,"admin.html")
 
 
 

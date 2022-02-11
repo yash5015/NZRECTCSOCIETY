@@ -5,6 +5,13 @@
 
     {%block body%}
     {% load static %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="loan-message" id="loan-message">
+        <strong>{{message}}</strong>
+        <div class="cross" id="cross" onclick="disableMessage()">&#10060;</div>
+    </div>
+    {% endfor %} {% endif %}
     <section class="members">
         <div class="container">
             <h1>members</h1>

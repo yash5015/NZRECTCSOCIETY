@@ -618,12 +618,24 @@ tr:nth-child(even) {
   justify-content: center;
 }
 
+.usercontactdiv {
+  display: flex;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+}
+
 label {
   font-size: 20px;
   margin: 20px 0;
 }
 
 .tableuser {
+  border-collapse: collapse;
+  position: relative;
+  width: 100%;
+}
+.tablecontact {
   border-collapse: collapse;
   position: relative;
   width: 100%;
