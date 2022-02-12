@@ -5,11 +5,11 @@
 
     {%block body%}
     {%load static%}
-    
+
     {% if messages %}
-    {% for message in messages  %}
+    {% for message in messages %}
     <div class="loan-message" id="loan-message">
-            <strong>{{message}}</strong>
+        <strong>{{message}}</strong>
         <div class="cross" id="cross" onclick="disableMessage()">&#10060;</div>
     </div>
     {% endfor %}
@@ -17,56 +17,57 @@
     <section class="loan" id="loan">
         <div class="container">
             <h1>loan</h1>
-            <div class="row ">
-                
+            <div class="row loanrow">
+
                 <div class="loan-card">
-                    <a href="media/example_loan.pdf" target="_blank"
-                    ><img src="{% static 'assets/pdflogo2.png' %}" alt=""/></a>
+                    <a href="media/example_loan.pdf" target="_blank"><img src="{% static 'assets/pdflogo2.png' %}"
+                            alt="" /></a>
                     <p>example_loan.pdf</p>
                 </div>
                 <div class="loan-card">
-                    <a href="media/example_loan.pdf" target="_blank"
-                    ><img src="{% static 'assets/pdflogo2.png' %}" alt=""/></a>
+                    <a href="media/example_loan.pdf" target="_blank"><img src="{% static 'assets/pdflogo2.png' %}"
+                            alt="" /></a>
                     <p>example_loan.pdf</p>
                 </div>
                 <div class="loan-card">
-                    <a href="media/example_loan.pdf" target="_blank"
-                    ><img src="{% static 'assets/pdflogo2.png' %}" alt=""/></a>
+                    <a href="media/example_loan.pdf" target="_blank"><img src="{% static 'assets/pdflogo2.png' %}"
+                            alt="" /></a>
                     <p>example_loan.pdf</p>
                 </div>
             </div>
         </div>
     </section>
-<section>
-    <div class="container">
-        <h2>Submit Your loan Application</h2>
-        <form action="" method="POST" enctype="multipart/form-data">
-            {%csrf_token%}
-        <div class="loaninput">
-        <label for="name">Name</label>
-        <input type="text"name="name" placeholder="Enter your Name" required>
-    </div>
-    <div class="loaninput">
-        <label for="phoneno">Phone Number</label>
-        <input type="text" name="phno" id="" maxlength="11" minlength="10" placeholder="Enter Your Phone Number" required>
-    </div>
-    <div class="loaninput">
-        <label for="regno">Enter Registration Id</label>
-        <input type="text" name="regno" required>
-    </div>
-    <div class="loaninput">
-        <input type="file" name="userform" id="" required>
-    </div>
+    <section>
+        <div class="container">
+            <h2>Submit Your loan Application</h2>
+            <form action="" method="POST" enctype="multipart/form-data">
+                {%csrf_token%}
+                <div class="loaninput">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" placeholder="Enter your Name" required>
+                </div>
+                <div class="loaninput">
+                    <label for="phoneno">Phone Number</label>
+                    <input type="text" name="phno" id="" maxlength="11" minlength="10"
+                        placeholder="Enter Your Phone Number" required>
+                </div>
+                <div class="loaninput">
+                    <label for="regno">Enter Registration Id</label>
+                    <input type="text" name="regno" required>
+                </div>
+                <div class="loaninput">
+                    <input type="file" name="userform" id="" required>
+                </div>
 
-    <div class="g-recaptcha" data-sitekey="6LeR-WgeAAAAAPgTuI0q-gGO8-OFGD7F2tndTbPd"></div>
-        <button type="submit">Upload File</button>
-            
-        </form>
+                <div class="g-recaptcha" data-sitekey="6LeR-WgeAAAAAPgTuI0q-gGO8-OFGD7F2tndTbPd"></div>
+                <button type="submit">Upload File</button>
 
-    </div>
-</section>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<script src="{%static 'script/script.js'%}"></script>
+            </form>
+
+        </div>
+    </section>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="{%static 'script/script.js'%}"></script>
     {%endblock%}
 </body>
 

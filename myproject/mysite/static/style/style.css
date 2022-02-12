@@ -25,12 +25,12 @@
   z-index: 1;
 } */
 .branding-logo img {
-  width: 170px;
-  height: 170px;
+  width: 135px;
+  height: 135px;
 }
 .reg img {
-  width: 130px;
-  height: 130px;
+  width: 140px;
+  height: 140px;
 }
 .branding .name {
   width: 65%;
@@ -55,7 +55,8 @@ nav {
   background: rgba(0, 0, 0, 0.7);
   height: 50px;
   z-index: 1;
-  position: relative;
+  position: sticky;
+  top: 0;
 }
 nav ul {
   display: flex;
@@ -76,14 +77,7 @@ nav ul {
   /* background: rgb(255, 49, 49); */
   background: rgb(102, 7, 70);
 }
-.navbanneroverlay {
-  position: relative;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-}
+
 .banner {
   width: 100%;
   height: 70vh;
@@ -162,7 +156,9 @@ h3 {
   flex-direction: column;
   align-items: center;
 }
-
+.footercontainer p {
+  font-size: 15px;
+}
 .footerrow {
   position: relative;
   width: 95%;
@@ -201,6 +197,9 @@ footer p {
 }
 .site-map p a {
   font-size: 17px;
+}
+.splash {
+  display: none;
 }
 
 /* #################### footer end########### */
@@ -242,7 +241,8 @@ section {
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
-  width: 1100px;
+  position: relative;
+  width: 100%;
 }
 .personsrow {
   display: flex;
@@ -261,6 +261,7 @@ section {
 }
 .persons p {
   font-size: 15px;
+  text-align: center;
 }
 .aboutname {
   display: -webkit-box;
@@ -268,6 +269,9 @@ section {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.aboutdata p {
+  text-align: justify;
 }
 p {
   line-height: 25px;
@@ -322,23 +326,11 @@ tr:nth-child(even) {
 }
 .chairman-message p:first-child {
   color: #dddddd;
-  width: 200px;
+  width: 220px;
 }
 
 #cmtext {
-  animation: moving 15s infinite;
-  color: #2cb5e8;
   width: 100%;
-  position: relative;
-  left: 100%;
-}
-@keyframes moving {
-  0% {
-    right: 0;
-  }
-  100% {
-    left: 0;
-  }
 }
 
 /* ######################### end about us ########### */
@@ -392,6 +384,14 @@ tr:nth-child(even) {
   padding: 30px;
 }
 
+.idxart p {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* ###################### end articles #################### */
 
 /* #################### branchfiles ########## */
@@ -428,9 +428,6 @@ tr:nth-child(even) {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 150px;
-  height: 150px;
-
   margin: 30px;
 }
 .loan-card img {
@@ -474,7 +471,6 @@ tr:nth-child(even) {
   background-color: #000000;
   background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
   width: 50%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -586,9 +582,7 @@ tr:nth-child(even) {
 .map {
   margin: 50px 20px;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
-
   width: 500px;
-  height: 450px;
 }
 
 /* ################################ end contact us ##################### */
@@ -699,3 +693,422 @@ input[type="password"] {
 }
 
 /* ########################### end login form ################## */
+
+/* #################### media query ##################### */
+
+@media (max-width: 1179px) {
+  .details p {
+    font-size: 15px;
+  }
+  .details h3 {
+    font-size: 20px;
+  }
+  .icon i {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 1025px) {
+  .branding-logo img {
+    width: 115px;
+    height: 125px;
+  }
+  .reg img {
+    width: 115px;
+    height: 125px;
+  }
+  section {
+    padding: 50px 50px;
+  }
+  .footerdiv {
+    padding-right: 60px;
+  }
+  .contactForm {
+    width: 50%;
+    padding: 25px 50px;
+    margin: 50px 0px;
+  }
+}
+
+@media (max-width: 902px) {
+  .reg img {
+    width: 105px;
+    height: 115px;
+  }
+  .branding-logo img {
+    width: 100px;
+    height: 115px;
+  }
+  .chairman-message p:first-child {
+    width: 221px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  .branding {
+    padding: 0;
+    justify-content: space-around;
+  }
+  .persons img {
+    width: 170px;
+    height: 170px;
+  }
+  .persons p {
+    font-size: 11px;
+  }
+  p {
+    font-size: 16px;
+  }
+  .cinfo p {
+    font-size: 12px;
+  }
+  .site-map p a {
+    font-size: 13px;
+  }
+  .footerdiv img {
+    position: relative;
+    height: 310px;
+    width: 200px;
+    left: 55px;
+  }
+  .footerrow {
+    position: relative;
+    width: 99%;
+  }
+  .footercontainer {
+    padding-left: 40px;
+  }
+  .card {
+    padding: 5px;
+  }
+  .contactForm .inputBox {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 835px) {
+  .tableuser td {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 769px) {
+  .navigation li a {
+    font-size: 13px;
+  }
+  .branding-logo img {
+    width: 80px;
+    height: 100px;
+  }
+  h2 {
+    font-size: 15px;
+  }
+  .reg img {
+    width: 90px;
+    height: 100px;
+  }
+  h1 {
+    font-size: 55px;
+  }
+  .persons img {
+    width: 140px;
+    height: 140px;
+  }
+  .persons p {
+    font-size: 10px;
+  }
+  .chairman-message p:first-child {
+    width: 164px;
+  }
+  .container {
+    width: 95%;
+  }
+  .reg img {
+    width: 80px;
+    height: 90px;
+  }
+  .branding-logo img {
+    width: 70px;
+    height: 90px;
+  }
+  .chairman-message p:first-child {
+    width: 80px;
+  }
+  .persons {
+    align-items: center;
+  }
+  .personsrow {
+    flex-direction: column;
+  }
+  .persons img {
+    width: 200px;
+    height: 200px;
+  }
+  .persons p {
+    font-size: 15px;
+  }
+  .persons-card {
+    margin: 0 0 30px;
+  }
+  .footercontainer p {
+    font-size: 13px;
+  }
+  .folder img {
+    width: 80px;
+  }
+  .g-recaptcha {
+    width: 266px;
+    margin-left: -20px;
+    overflow: hidden;
+  }
+  .tableuser td {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  button {
+    font-size: 12px;
+  }
+  .tablecontact td {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 763px) {
+  .details h3 {
+    font-size: 15px;
+  }
+  .details p {
+    font-size: 12px;
+  }
+  .icon i {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 736px) {
+  .contact-map {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .contactForm {
+    width: 500px;
+  }
+  .g-recaptcha {
+    width: 100%;
+    padding-left: 20px;
+  }
+  .map {
+    height: 400px;
+  }
+  .card {
+    margin: 5px;
+  }
+}
+
+@media (max-width: 535px) {
+  .articles-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .cardphoto {
+    width: 280px;
+    margin-bottom: 30px;
+  }
+  .footerdiv img {
+    height: 275px;
+    width: 161px;
+    left: 47px;
+  }
+  .folder img {
+    width: 80px;
+  }
+  .folder img {
+    width: 60px;
+  }
+  .loan-card img {
+    width: 80px;
+    height: 80px;
+  }
+  .contactForm {
+    width: 350px;
+  }
+  .map {
+    width: 350px;
+    height: 300px;
+  }
+  .contact-info {
+    flex-wrap: wrap;
+  }
+  .card {
+    width: 170px;
+  }
+}
+@media (max-width: 469px) {
+  .footerdiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  .site-map p a {
+    font-size: 12px;
+  }
+  .cinfo p {
+    font-size: 13px;
+  }
+
+  .footercontainer {
+    width: 100%;
+    padding: 10px 0 0px 8px;
+  }
+  .footerdiv img {
+    left: 0;
+  }
+  .splash {
+    display: block;
+  }
+  .splash img {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    margin-bottom: -350px;
+  }
+  .loan-card {
+    margin: 10px;
+  }
+  .loan-card img {
+    width: 60px;
+    height: 60px;
+  }
+  .loan-card p {
+    font-size: 13px;
+  }
+  .card {
+    width: 140px;
+  }
+  .contactForm {
+    width: 300px;
+    padding: 15px;
+  }
+  .map {
+    width: 300px;
+  }
+}
+@media (max-width: 468px) {
+  .tableboard td {
+    font-size: 12px;
+  }
+}
+@media (max-width: 426px) {
+  h1 {
+    font-size: 48px;
+  }
+  .chairman-message p:first-child {
+    width: 65px;
+    font-size: 13px;
+  }
+  .menuToggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: url("../assets/menu.png");
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: 0.2s;
+  }
+  nav .navigation {
+    display: none;
+  }
+  nav .navigation li {
+    margin: 10px;
+  }
+  nav .navigation.active {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #0277bd;
+  }
+  nav .navigation li a {
+    color: #fff;
+    font-size: 1.6rem;
+  }
+  .menuToggle.active {
+    background: url("../assets/close.png");
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.2s;
+  }
+  .branding-logo img {
+    width: 55px;
+    height: 75px;
+  }
+  .reg img {
+    width: 70px;
+    height: 75px;
+  }
+  h2 {
+    font-size: 13px;
+  }
+  .site-map p a {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 376px) {
+  .footercontainer p {
+    font-size: 10px;
+  }
+  h1 {
+    font-size: 36px;
+  }
+  .branding-logo img {
+    width: 50px;
+    height: 65px;
+  }
+  .reg img {
+    width: 60px;
+    height: 65px;
+  }
+  .tableboard td {
+    font-size: 9px;
+  }
+  .g-recaptcha {
+    width: 285px;
+    margin-left: -20px;
+    overflow: hidden;
+  }
+  section {
+    padding: 40px 40px;
+  }
+  .card {
+    width: 210px;
+  }
+}
+
+@media (max-width: 321px) {
+  h1 {
+    font-size: 32px;
+  }
+  .loan-card img {
+    width: 50px;
+    height: 50px;
+  }
+  .loan-card p {
+    font-size: 10px;
+  }
+}
+/* #################### end media query ##################### */

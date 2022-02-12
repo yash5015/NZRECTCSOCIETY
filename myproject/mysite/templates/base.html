@@ -18,47 +18,44 @@
 </head>
 
 
-<body onload="slider()" style=" background: rgb(249, 226, 227);">
+<body onload="slider()" style=" background: rgb(249, 226, 227); border: 1px solid red;">
 
     <div class=" navbannerbg">
-        <div class="navbanneroverlayy">
-            <div class="branding">
-                <div class="branding-logo">
-                    <img src="{%static 'assets/newlogo.png'%}" alt="">
-                </div>
-                <div class="name">
-                    <h2>The northern zone railway employees co-operative thrift and credit society ltd. regd office
-                        baroda
-                        house
-                        new delhi. </h2>
-                </div>
-                <div class="reg">
-                    <img src="{%static 'assets/reg3.png'%}" alt="">
-                </div>
 
+        <div class="branding">
+            <div class="branding-logo">
+                <img src="{%static 'assets/newlogo2.png'%}" alt="">
+            </div>
+            <div class="name">
+                <h2>The northern zone railway employees co-operative thrift and credit society ltd. regd office
+                    baroda
+                    house
+                    new delhi. </h2>
+            </div>
+            <div class="reg">
+                <img src="{%static 'assets/reg3.png'%}" alt="">
             </div>
 
-            <nav>
-                <div class="logo" id="logo">
-                    <a href="#banner"><img src="" alt=""></a>
-                </div>
-                <div class="menuToggle" onclick="toggleMenu();"></div>
-                <ul class="navigation">
-                    <li><a href="/" onclick="toggleMenu();">HOME</a></li>
-                    <li><a href="{%url 'about' %}" onclick="toggleMenu();">ABOUT US</a></li>
-                    <li><a href="{%url 'members'%}" onclick="toggleMenu();">MEMBERS</a></li>
-                    <li><a href=" {%url 'articles'%}" onclick="toggleMenu();">ARTICLES</a></li>
-                    <li><a href=" {%url 'loan'%}" onclick="toggleMenu();">LOAN</a></li>
-                    <li><a href=" {%url 'contact'%}" onclick="toggleMenu();">CONTACT US</a></li>
-                    {%if user.is_authenticated%}
-                    <li><a href=" {%url 'adminpanel'%}" onclick="toggleMenu();">ADMIN PANEL</a></li>
-                    <li><a href=" {%url 'logout'%}" onclick="toggleMenu();">LOGOUT</a></li>
-                    {%endif%}
-                </ul>
-            </nav>
         </div>
+
+        <nav>
+            <div class="logo" id="logo">
+                <a href="#banner"><img src="" alt=""></a>
+            </div>
+            <div class="menuToggle" onclick="toggleMenu();"></div>
+            <ul class="navigation">
+                <li><a href="/" onclick="toggleMenu();">HOME</a></li>
+                <li><a href="{%url 'about' %}" onclick="toggleMenu();">ABOUT US</a></li>
+                <li><a href="{%url 'members'%}" onclick="toggleMenu();">MEMBERS</a></li>
+                <li><a href=" {%url 'articles'%}" onclick="toggleMenu();">ARTICLES</a></li>
+                <li><a href=" {%url 'loan'%}" onclick="toggleMenu();">LOAN</a></li>
+                <li><a href=" {%url 'contact'%}" onclick="toggleMenu();">CONTACT US</a></li>
+                {%if user.is_authenticated%}
+                <li><a href=" {%url 'adminpanel'%}" onclick="toggleMenu();">ADMIN PANEL</a></li>
+                <li><a href=" {%url 'logout'%}" onclick="toggleMenu();">LOGOUT</a></li>
+                {%endif%}
+            </ul>
         </nav>
-    </div>
     </div>
 
     {%block body%}{%endblock%}
@@ -67,6 +64,9 @@
     <footer class="footer">
         <div class="container">
             <div class="footerdiv">
+                <div class="splash">
+                    <img src="{%static 'assets/splash2.png'%}" alt="">
+                </div>
                 <img src="{%static 'assets/steam_engine2_3.png'%}" alt="">
                 <div class="footercontainer">
                     <div class="footerrow">
@@ -108,14 +108,14 @@
                         </div>
 
                     </div>
-                    <p>All rights reserved 2022</p>
+                    <p>&copy; 2020 NZRECTC Society pvt ltd. All Rights Reserved | Design by</p>
                 </div>
 
             </div>
         </div>
         </div>
     </footer>
-
+    <script src="{%static 'script/script.js'%}"></script>
 </body>
 
 </html>

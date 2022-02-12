@@ -19,17 +19,17 @@
             <div class="aboutin">
                 <div class="persons">
                     <div class="row personsrow">
-                        <div class="persons">
+                        <div class="persons-card">
                             <img src="{%static 'assets/chairman.jpg' %}" alt="">
                             <p>CH. AJIT SINGH</p>
                             <p> CHAIRMAN</p>
                         </div>
-                        <div class="persons">
+                        <div class="persons-card">
                             <img src="{%static 'assets/vice_cm.jpg' %}" alt="">
                             <p>Mr. KANWAL JEET SINGH</p>
                             <p> VICE CHAIRMAN</p>
                         </div>
-                        <div class="persons">
+                        <div class="persons-card">
                             <img src="{%static 'assets/CEO.jpg' %}" alt="">
                             <p>Mr. JAGAN PRASAD SHARMA</p>
                             <p> CHIEF EXECUTIVE OFFICER</p>
@@ -61,7 +61,10 @@
                     </button></a>
                 <div class="chairman-message" id="cmmessage">
                     <p>Chairman Message:</p>
-                    <p id="cmtext"></p>
+
+                    <marquee>
+                        <p id="cmtext"></p>
+                    </marquee>
                 </div>
             </div>
 
@@ -75,34 +78,37 @@
             <div class="row articles-row">
                 <div class="cardphoto">
                     <img src="{% static 'assets/article1_sadsansad.jpg' %}" alt="">
-                    <div class="photoinfo">
+                    <div class="idxart photoinfo">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis non quis molestiae enim.
                             Porro accusantium qui illo, illum ipsum expedita minus molestiae corporis sit magnam,
                             facilis eveniet non quaerat laboriosam fugit, vitae cumque. Sequi, corrupti accusantium
                             praesentium tempora rerum consectetur aliquid harum impedit possimus omnis dolorem neque
                             suscipit amet at.</p>
+                        <a href="{%url 'articles' %}">Read More</a>
                     </div>
 
                 </div>
                 <div class="cardphoto">
                     <img src="{% static 'assets/article1_sadsansad.jpg' %}" alt="">
-                    <div class="photoinfo">
+                    <div class="idxart photoinfo">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis non quis molestiae enim.
                             Porro accusantium qui illo, illum ipsum expedita minus molestiae corporis sit magnam,
                             facilis eveniet non quaerat laboriosam fugit, vitae cumque. Sequi, corrupti accusantium
                             praesentium tempora rerum consectetur aliquid harum impedit possimus omnis dolorem neque
                             suscipit amet at.</p>
+                        <a href="{%url 'articles' %}">Read More</a>
                     </div>
 
                 </div>
                 <div class="cardphoto">
                     <img src="{% static 'assets/article1_sadsansad.jpg' %}" alt="">
-                    <div class="photoinfo">
+                    <div class="idxart photoinfo">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis non quis molestiae enim.
                             Porro accusantium qui illo, illum ipsum expedita minus molestiae corporis sit magnam,
                             facilis eveniet non quaerat laboriosam fugit, vitae cumque. Sequi, corrupti accusantium
                             praesentium tempora rerum consectetur aliquid harum impedit possimus omnis dolorem neque
                             suscipit amet at.</p>
+                        <a href="{%url 'articles' %}">Read More</a>
                     </div>
 
                 </div>
