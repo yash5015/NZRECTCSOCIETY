@@ -1,19 +1,21 @@
 {% extends 'base.html' %} {% block body %} {% load static %}
 
 
-<nav>
+<div class="nav">
   <div class="logo" id="logo">
     <a href="#banner"><img src="" alt=""></a>
   </div>
-  <div class="menuToggle" onclick="toggleMenu();"></div>
-  <ul class="navigation">
-    <li><a href="#up-cm-mmbr-msg" onclick="toggleMenu();">Chairman Message</a></li>
-    <li><a href="#up-cm-mmbr-msg" onclick="toggleMenu();">Upload Members</a></li>
-    <li><a href="#londata" onclick="toggleMenu();">Loan Form Data</a></li>
-    <li><a href="#conquy" onclick="toggleMenu();">Contact Queries</a></li>
+  <div class="menuToggle2" onclick="toggleMenu2();"></div>
+  <ul class="navigation2">
+    <li><a href="#up-cm-mmbr-msg" onclick="toggleMenu2();">Chairman Message</a></li>
+    <li><a href="#up-cm-mmbr-msg" onclick="toggleMenu2();">Upload Members</a></li>
+    <li><a href="#londata" onclick="toggleMenu2();">Loan Form Data</a></li>
+    <li><a href="#conquy" onclick="toggleMenu2();">Contact Queries</a></li>
 
   </ul>
-</nav>
+</div>
+
+
 
 {% if messages %}
 {% for message in messages %}

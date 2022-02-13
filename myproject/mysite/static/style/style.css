@@ -55,9 +55,22 @@ nav {
   background: rgba(0, 0, 0, 0.7);
   height: 50px;
   z-index: 1;
-  position: sticky;
-  top: 0;
+  /* position: sticky;
+  top: 0; */
 }
+.nav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  height: 50px;
+  z-index: 1;
+  /* position: sticky;
+  top: 0; */
+}
+
 nav ul {
   display: flex;
   align-items: center;
@@ -67,6 +80,19 @@ nav ul {
   display: inline-block;
 }
 .navigation li a {
+  text-decoration: none;
+  margin-right: 10px;
+  color: #fff;
+}
+.nav ul {
+  display: flex;
+  align-items: center;
+}
+.navigation2 li {
+  list-style-type: none;
+  display: inline-block;
+}
+.navigation2 li a {
   text-decoration: none;
   margin-right: 10px;
   color: #fff;
@@ -159,6 +185,9 @@ h3 {
 .footercontainer p {
   font-size: 15px;
 }
+.ourcompany {
+  font-size: 12px;
+}
 .footerrow {
   position: relative;
   width: 95%;
@@ -200,6 +229,11 @@ footer p {
 }
 .splash {
   display: none;
+}
+
+.ourcompany {
+  color: rgb(249, 226, 227);
+  font-size: 17px;
 }
 
 /* #################### footer end########### */
@@ -728,6 +762,10 @@ input[type="password"] {
     padding: 25px 50px;
     margin: 50px 0px;
   }
+  .post-chairman,
+  .upload-members {
+    width: 40%;
+  }
 }
 
 @media (max-width: 902px) {
@@ -783,6 +821,13 @@ input[type="password"] {
   }
   .contactForm .inputBox {
     margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 863px) {
+  .userformdiv {
+    overflow: scroll;
+    justify-content: flex-start;
   }
 }
 
@@ -873,6 +918,12 @@ input[type="password"] {
   .tablecontact td {
     font-size: 12px;
   }
+  .file img {
+    width: 80px;
+  }
+  .file p {
+    font-size: 13px;
+  }
 }
 
 @media (max-width: 763px) {
@@ -905,6 +956,63 @@ input[type="password"] {
   }
   .card {
     margin: 5px;
+  }
+}
+
+@media (max-width: 620px) {
+  .menuToggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: url("../assets/menu.png");
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: 0.2s;
+  }
+  nav .navigation {
+    display: none;
+  }
+  nav .navigation li {
+    margin: 10px;
+  }
+  nav .navigation.active {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #0277bd;
+    z-index: 1;
+  }
+  nav .navigation li a {
+    color: #fff;
+    font-size: 1.6rem;
+  }
+  .menuToggle.active {
+    background: url("../assets/close.png");
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.2s;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+  .post-upload {
+    flex-direction: column;
+    align-items: center;
+  }
+  .post-chairman,
+  .upload-members {
+    width: 90%;
   }
 }
 
@@ -1011,47 +1119,7 @@ input[type="password"] {
     width: 65px;
     font-size: 13px;
   }
-  .menuToggle {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    background: url("../assets/menu.png");
-    background-size: 30px;
-    background-repeat: no-repeat;
-    background-position: center;
-    cursor: pointer;
-    margin-right: 5px;
-    transition: 0.2s;
-  }
-  nav .navigation {
-    display: none;
-  }
-  nav .navigation li {
-    margin: 10px;
-  }
-  nav .navigation.active {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background: #0277bd;
-  }
-  nav .navigation li a {
-    color: #fff;
-    font-size: 1.6rem;
-  }
-  .menuToggle.active {
-    background: url("../assets/close.png");
-    background-size: 25px;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: 0.2s;
-  }
+
   .branding-logo img {
     width: 55px;
     height: 75px;
@@ -1072,6 +1140,9 @@ input[type="password"] {
   .footercontainer p {
     font-size: 10px;
   }
+  .ourcompany {
+    font-size: 12px;
+  }
   h1 {
     font-size: 36px;
   }
@@ -1086,6 +1157,10 @@ input[type="password"] {
   .tableboard td {
     font-size: 9px;
   }
+  .tablecontact td,
+  th {
+    padding: 10px;
+  }
   .g-recaptcha {
     width: 285px;
     margin-left: -20px;
@@ -1096,6 +1171,12 @@ input[type="password"] {
   }
   .card {
     width: 210px;
+  }
+  .file img {
+    width: 60px;
+  }
+  .file p {
+    font-size: 11px;
   }
 }
 
@@ -1109,6 +1190,9 @@ input[type="password"] {
   }
   .loan-card p {
     font-size: 10px;
+  }
+  .ourcompany {
+    font-size: 12px;
   }
 }
 /* #################### end media query ##################### */
